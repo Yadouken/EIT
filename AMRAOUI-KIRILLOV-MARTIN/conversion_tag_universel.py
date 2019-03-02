@@ -1,4 +1,10 @@
-tags = open("test", "r")
+import sys
+
+if (len(sys.argv) != 4):
+	print("Syntaxe : python conversion_tag_universel.py dicoPTBtoUNIV textEtiqLIMA resultat.txt")
+	exit()
+
+tags = open(sys.argv[1], "r")
 tagline = tags.readlines()
 dico = { }
 #print(file.read())
@@ -6,9 +12,9 @@ for i in range(len(tagline)):
 	tagline[i] = tagline[i].split(' ')
 	dico[tagline[i][0]] = tagline[i][1].rstrip()
 
-file = open("texteEtiquete.txt","r")
+file = open(sys.argv[2],"r")
 
-output = open("texteConvertiUniversel.txt", "w")
+output = open(sys.argv[3], "w")
 
 line = file.readlines()
 
