@@ -1,7 +1,7 @@
 import sys
 
 if (len(sys.argv) != 3):
-    print("Syntaxe : python NERtoOccur.py input output")
+    print("Syntaxe : python NERtoOccurences.py input output")
     exit()
 
 inputfile = open(sys.argv[1], "r")
