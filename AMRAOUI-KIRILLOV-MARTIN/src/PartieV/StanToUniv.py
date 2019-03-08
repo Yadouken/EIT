@@ -14,6 +14,8 @@ for i in range(len(lignes)):
 for i in range(len(lignes)):
     for j in range (0,len(lignes[i])):
         paire = lignes[i][j].split('/')
+        if (len(paire) != 2):
+        	continue
         if (paire[1] == "PERSON" or paire[1] == "ORGANIZATION" or paire[1] == "LOCATION"):
             Xfile.write(paire[0] + "_NOUN ")
         else:
