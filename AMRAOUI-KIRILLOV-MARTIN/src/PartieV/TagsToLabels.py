@@ -27,6 +27,8 @@ if __name__ == "__main__":
 	text = f.readlines()
 	
 	for i in range(len(text)):
+		text[i] = str.replace(text[i], '\n', '')
+
 		# Removal of unnecessary flags
 		status = re.search(' STATUS="[A-Z]+"', text[i])
 		if status != None:
