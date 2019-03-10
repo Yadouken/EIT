@@ -20,7 +20,11 @@ for i in range(len(lignes)):
     lignes[i] = lignes[i].split(' ')
 for i in range(len(lignes)):
     for j in range (0,len(lignes[i])):
+        sautDeLigne = False
         paire = lignes[i][j].split('/')
+        if (paire[0] == "."):
+            paire[0] = str.replace(paire[0], ".", ".\n" )
+            sautDeLigne = True
         if (len(paire) != 2):
             continue
         if (paire[1] == "PERSON" or paire[1] == "ORGANIZATION" or paire[1] == "LOCATION"):
@@ -31,6 +35,5 @@ for i in range(len(lignes)):
             nextPaire = lignes[i][j+1].split('/')
             if (len(paire) != 2):
                 continue
-            if (nextPaire[0] != "." and nextPaire[0] != "," and nextPaire[0] != ")"):
+            if (nextPaire[0] != "." and nextPaire[0] != "," and nextPaire[0] != ")" and sautDeLigne == False):
                 Xfile.write(" ")
-        

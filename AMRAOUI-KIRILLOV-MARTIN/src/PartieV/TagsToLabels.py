@@ -32,7 +32,6 @@ if __name__ == "__main__":
 		text[i] = str.replace(text[i], '\n', ' ')
 		if (len(text[i]) == 1 and text[i][0] == ' ' ):
 			text[i] = str.replace(text[i], ' ', '')
-
 		# Removal of unnecessary flags
 		status = re.search(' STATUS="[A-Z]+"', text[i])
 		if status != None:
@@ -47,12 +46,13 @@ if __name__ == "__main__":
 		result = re.findall('<[A-Z]+ TYPE="[A-Z]+">([^<]+)</[A-Z]+>', text[i])
 		for j in range(len(realTyp)):
 			tag = re.search('<[A-Z]+ TYPE="[A-Z]+">([^<]+)</[A-Z]+>', text[i])
+
 			if tag != None:
 				# In this project we only consider three named entities, the others are just taken off
 				if ((realTyp[j] == "PERSON") or (realTyp[j] == "ORGANIZATION") or (realTyp[j] == "LOCATION")):
 					# Replace realTyp[j] by "NOUN" in next line to get Universal tags
 					if (len(result[j]) > 1):
-						result[j] = str.replace(result[j], " ","_NOUN ")
+						result[j] = str.replace(result[j], " ","ESPACE")
 					text[i] = str.replace(text[i], tag.group(0), result[j] + "_" + "NOUN")
 				else:
 					text[i] = str.replace(text[i], tag.group(0), result[j])
