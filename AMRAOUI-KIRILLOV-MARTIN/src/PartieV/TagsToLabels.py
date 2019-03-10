@@ -27,6 +27,7 @@ if __name__ == "__main__":
 	text = f.readlines()
 	
 	for i in range(len(text)):
+		text[i] = str.replace(text[i], '\'s', '')
 		text[i] = str.replace(text[i], '\n', ' ')
 		if (len(text[i]) == 1 and text[i][0] == ' ' ):
 			text[i] = str.replace(text[i], ' ', '')
