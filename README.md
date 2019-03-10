@@ -1,6 +1,7 @@
 # EIT
 ### Partie II)
 cd src/PartieII
+
 python RefToText.py wsj_0010_sample.pos.ref REF.txt
 	Creation de référence mot_etiquette
 python LimaToText.py ExLima.conll LimaTxt.txt
