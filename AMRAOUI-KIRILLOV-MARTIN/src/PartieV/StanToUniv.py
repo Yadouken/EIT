@@ -16,6 +16,7 @@ for i in range(len(lignes)):
     lignes[i] = str.replace(lignes[i], "\'s", '' )
     lignes[i] = str.replace(lignes[i], "-LRB-/O ", '(' )
     lignes[i] = str.replace(lignes[i], "-RRB-", ')' )
+    lignes[i] = str.replace(lignes[i], "-", '/O ' )
     lignes[i] = lignes[i].split(' ')
 for i in range(len(lignes)):
     for j in range (0,len(lignes[i])):
