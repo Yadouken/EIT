@@ -2,7 +2,7 @@
 cd src/PartieII
 python RefToText.py wsj_0010_sample.pos.ref REF.txt
 	Creation de référence mot_etiquette
-python LimaToText.py VraiLima.conll LimaTxt.txt
+python LimaToText.py ExLima.conll LimaTxt.txt
 	Lima Conversion Lima en mot_etiquette
 python evaluate.py LimaTxt.txt REF.txt
 	Evaluation de Lima PTB
