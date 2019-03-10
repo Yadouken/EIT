@@ -39,3 +39,5 @@ for i in range(len(lignes)):
 			groupMots = lignes[i][1].split(' ')
 			for j in range (0,len(groupMots)):
 				Xfile.write(groupMots[j]+"/O ")
+#	elif (len(lignes[i]) == 1):
+#		Xfile.write("\n")
